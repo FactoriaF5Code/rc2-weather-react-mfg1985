@@ -1,16 +1,8 @@
-import { useState } from 'react'
-
-import './App.css'
-
-function App() {
-  
-
-  return (
+console.log(import.meta.env.VITE_API_KEY)
+export default function App(){
+  return(
     <>
-      <h1>El Tiempo</h1>
-      
+    <h1>My App</h1>
     </>
   )
 }
-
-export default App
