@@ -1,6 +1,13 @@
 import { LoadingButton } from "@mui/lab";
 import { Box, Container, TextField, Typography } from "@mui/material";
 import { useState } from "react";
+import Grid from "@mui/material/Grid";
+
+const fechaActual = new Date();
+const fechaSiguiente = new Date();
+    fechaSiguiente.setDate(fechaActual.getDate() + 1);
+
+const fechaFormateada = fechaSiguiente.toLocaleDateString();
 
 const API_WEATHER = `http://api.weatherapi.com/v1/current.json?key=3b6614e1cce64b2f86503754241401&lang=es&q=`;
 
@@ -45,7 +52,6 @@ export default function App() {
         condition: data.current.condition.code,
         conditionText: data.current.condition.text,
         icon: data.current.condition.icon,
-        icon2: 
       });
     } catch (error) {
       console.log(error);
@@ -129,6 +135,65 @@ export default function App() {
           >
             {weather.conditionText}
           </Typography>
+           <Grid
+        container
+        spacing={2}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+        >
+          <img src={weather.icon} alt="" />
+          <p>{fechaFormateada}</p>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+        >
+          <img src={weather.icon} alt="" />
+          <p>{fechaFormateada}</p>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+        >
+          <img src={weather.icon} alt="" />
+          <p>{fechaFormateada}</p>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+        >
+          <img src={weather.icon} alt="" />
+          <p>{fechaFormateada}</p>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+        >
+          <img src={weather.icon} alt="" />
+          <p>{fechaFormateada}</p>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+        >
+          <img src={weather.icon} alt="" />
+          <p>{fechaFormateada}</p>
+        </Grid>
+      </Grid>
         </Box>
       )}
 
@@ -144,6 +209,37 @@ export default function App() {
           WeatherAPI.com
         </a>
       </Typography>
+     
     </Container>
   );
 }
+/*import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
+
+const fechaActual = new Date();
+const fechaSiguiente = new Date();
+    fechaSiguiente.setDate(fechaActual.getDate() + 1);
+
+const fechaFormateada = fechaSiguiente.toLocaleDateString();
+
+export default function App() {
+  return (
+    <Container>
+      <Grid
+        container
+        spacing={2}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+        >
+          <img src="../public/vite.svg" alt="" />
+          <p>{fechaFormateada}</p>
+        </Grid>
+       
+      </Grid>
+    </Container>
+  );
+}*/
